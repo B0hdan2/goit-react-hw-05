@@ -20,7 +20,6 @@ function MovieCast() {
     getActors();
   }, [movieId]);
 
-  console.log(actors);
   return (
     <>
       {actors.length === 0 ? (
