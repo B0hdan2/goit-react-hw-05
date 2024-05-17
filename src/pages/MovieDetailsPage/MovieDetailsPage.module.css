@@ -1,0 +1,64 @@
+.section {
+    padding: 20px 0;
+}
+
+.section:not(:last-child) {
+    border-bottom: 1px solid black;
+}
+
+.button {
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    color: black;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.containerDetails {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+}
+
+.img {
+    margin-right: 20px;
+}
+
+.item:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 25px;
+}
+
+.infoList {
+    display: flex;
+    justify-content: center;
+}
+
+.infoItem:not(:last-child) {
+    margin-right: 20px;
+}
+
+.infoLink {
+    color: black;
+    font-size: 25px;
+
+    &:hover,
+    &:focus {
+        color: rgba(0, 102, 102, 0.705)
+    }
+}

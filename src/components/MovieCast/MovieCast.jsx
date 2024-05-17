@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { requestToServerActors } from "../../movies.API";
 import { useParams } from "react-router-dom";
+import { MdOutlineImageNotSupported } from "react-icons/md";
+import s from "./MovieCast.module.css";
 
 function MovieCast() {
   const [actors, setActors] = useState([]);
@@ -25,16 +27,21 @@ function MovieCast() {
       {actors.length === 0 ? (
         <p>No cast information available</p>
       ) : (
-        <ul>
+        <ul className={s.list}>
           {actors.map((actor) => (
-            <li key={actor.id}>
-              <img
-                src={ actor.profile_path === null ?"../../../public/free-icon-no-photo-4054617.png":photo + actor.profile_path}
-                alt={actor.original_name}
-                width='150'
-                height='200'
-              />
-              <h3>{actor.name}</h3>
+            <li className={s.item} key={actor.id}>
+              {actor.profile_path === null ? (
+                <MdOutlineImageNotSupported className={s.icon}/>
+              ) : (
+                <img
+                  src={photo + actor.profile_path}
+                  alt={actor.original_name}
+                  width='80'
+                  height='120'
+                />
+              )}
+
+              <h3 className={s.title}>{actor.name}</h3>
             </li>
           ))}
         </ul>

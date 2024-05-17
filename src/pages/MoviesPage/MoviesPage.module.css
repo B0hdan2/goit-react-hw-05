@@ -1,0 +1,51 @@
+.input {
+    height: 40px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-right: 20px;
+    padding-left: 10px;
+
+    &:hover,
+    &:focus {
+        border: 1px solid rgba(0, 102, 102, 0.705);
+    }
+}
+
+.button {
+    height: 40px;
+    padding: 0 20px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        border: 1px solid rgba(0, 102, 102, 0.705);
+        color: rgba(0, 102, 102, 0.705);
+    }
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.item{
+    max-width: 200px;
+    text-align: center;
+}
+
+.title{
+    font-weight: 100;
+    font-size: 15px;
+    color: black;
+}

@@ -10,6 +10,15 @@ export const requestToServerPopularMovie = async () => {
 
   return data;
 };
+export const requestToServerMovies = async (query) => {
+  const { data } = await axios.get("search/movie", {
+    params: {
+      query,
+    },
+  });
+
+  return data;
+};
 
 export const requestToServerDetalic = async (movieId) => {
   const { data } = await axios.get(`movie/${movieId}`);
