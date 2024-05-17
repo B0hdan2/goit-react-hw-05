@@ -89,20 +89,20 @@ function MovieDetailsPage() {
           <Suspense
             fallback={
               <BallTriangle
-              height={50}
-              width={50}
-              radius={5}
-              color='#000'
-              ariaLabel='ball-triangle-loading'
-              wrapperStyle={{
-                display: "flex",
-                justifyContent: 'space-around',
-                paddingTop: 20,
-                paddingBottom: 20,
-              }}
-              wrapperClass=''
-              visible={true}
-            />
+                height={50}
+                width={50}
+                radius={5}
+                color='#000'
+                ariaLabel='ball-triangle-loading'
+                wrapperStyle={{
+                  display: "flex",
+                  justifyContent: "space-around",
+                  paddingTop: 20,
+                  paddingBottom: 20,
+                }}
+                wrapperClass=''
+                visible={true}
+              />
             }
           >
             <Outlet />
