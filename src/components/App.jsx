@@ -27,7 +27,7 @@ const App = () => {
             ariaLabel='ball-triangle-loading'
             wrapperStyle={{
               display: "flex",
-              justifyContent: 'space-around',
+              justifyContent: "space-around",
               paddingTop: 20,
               paddingBottom: 20,
             }}

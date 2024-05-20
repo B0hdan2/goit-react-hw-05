@@ -1,14 +1,15 @@
-.list{
+.list {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
 }
-.item{
+
+.item {
     max-width: 200px;
 }
 
-.title{
+.title {
     font-weight: 100;
     font-size: 15px;
     color: black;
