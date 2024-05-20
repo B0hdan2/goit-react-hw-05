@@ -1,37 +1,44 @@
-import { useEffect, useState } from "react";
 import { requestToServerActors } from "../../movies.API";
 import { useParams } from "react-router-dom";
 import { MdOutlineImageNotSupported } from "react-icons/md";
 import s from "./MovieCast.module.css";
+import { useHttp } from "../../hooks/use.Http";
+import { BallTriangle } from "react-loader-spinner";
 
 function MovieCast() {
-  const [actors, setActors] = useState([]);
   const { movieId } = useParams();
   const photo = "https://image.tmdb.org/t/p/w500/";
 
-  useEffect(() => {
-    const getActors = async () => {
-      try {
-        const { cast } = await requestToServerActors(movieId);
-
-        setActors(cast);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getActors();
-  }, [movieId]);
+  const [movies, loader, error] = useHttp(requestToServerActors, movieId);
 
   return (
     <>
-      {actors.length === 0 ? (
+      {loader && (
+        <BallTriangle
+          height={50}
+          width={50}
+          radius={5}
+          color='#000'
+          ariaLabel='ball-triangle-loading'
+          wrapperStyle={{
+            display: "flex",
+            justifyContent: "space-around",
+            paddingTop: 20,
+            paddingBottom: 20,
+          }}
+          wrapperClass=''
+          visible={true}
+        />
+      )}
+      {error && <div>Error</div>}
+      {!loader && !error && movies.length === 0 ? (
         <p>No cast information available</p>
       ) : (
         <ul className={s.list}>
-          {actors.map((actor) => (
+          {movies.map((actor) => (
             <li className={s.item} key={actor.id}>
               {actor.profile_path === null ? (
-                <MdOutlineImageNotSupported className={s.icon}/>
+                <MdOutlineImageNotSupported className={s.icon} />
               ) : (
                 <img
                   src={photo + actor.profile_path}

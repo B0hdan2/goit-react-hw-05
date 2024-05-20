@@ -1,0 +1,16 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text {
+    font-weight: 600pc;
+    font-size: 50px;
+    color: black;
+}
+
+.svg {
+    width: 400px;
+    height: 400px;
+}
